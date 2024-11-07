@@ -148,3 +148,14 @@ background-color: #ffffff;
 }
 
 
+.testimonial-card {
+  opacity: 0;
+  transform: translateX(50px); /* Cards start from off-screen */
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Animate opacity and translation */
+}
+
+/* Slide-in animation that happens once the animationStarted is true */
+.testimonial-card.slide-in {
+  opacity: 1;
+  transform: translateX(0); /* Move cards to their final position */
+}

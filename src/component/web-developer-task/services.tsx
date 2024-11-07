@@ -2,12 +2,6 @@ import { PiGlobeSimpleDuotone } from "react-icons/pi";
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { BsIncognito } from "react-icons/bs";
 import { BiSolidKeyboard } from "react-icons/bi";
-const services = [
-  { name: "Online", color: "bg-blue-200" },
-  { name: "Bank Transfers", color: "bg-green-200" },
-  { name: "Keyed", color: "bg-pink-200" },
-  { name: "In-Person", color: "bg-purple-200" },
-];
 
 const Services = () => {
   return (

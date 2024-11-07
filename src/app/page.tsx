@@ -1,22 +1,26 @@
-import Link from "next/link";
+import FAQ from "@/component/web-developer-task/faq";
+import Footer from "@/component/web-developer-task/footer";
+import HeroStarted from "@/component/web-developer-task/hero-Started";
+import PaymentMethods from "@/component/web-developer-task/paymentMethods";
+import Services from "@/component/web-developer-task/services";
+import GetStartedSection from "@/component/web-developer-task/started";
+import Testimonials from "@/component/web-developer-task/testimonials";
 
-export default function Home() {
+function Page() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-500 text-center">
-      <h1 className="text-2xl font-bold text-white mb-6">Select a button</h1>
-      <div className="flex items-center gap-2">
-        <Link href="/web-page">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
-            Web page
-          </button>
-        </Link>
-        <span className="text-white">or</span>
-        <Link href="/QA-task/sign-up">
-          <button className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg">
-            QA Tester
-          </button>
-        </Link>
+    <div className="text-secondary-900">
+      <HeroStarted />
+      <div className="hidden lg:block">
+        <PaymentMethods />
       </div>
+      <Services />
+      <GetStartedSection />
+      <Testimonials />
+      <FAQ />
+
+      <Footer />
     </div>
   );
 }
+
+export default Page;

@@ -3,15 +3,14 @@ import Link from "next/link";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { BsApple } from "react-icons/bs";
-import { BiLogoPlayStore } from "react-icons/bi";
-import { BiLogoFacebook } from "react-icons/bi";
+import { BiLogoPlayStore, BiLogoFacebook } from "react-icons/bi";
 import { FaTwitter, FaVimeoV, FaInstagram } from "react-icons/fa";
 import ContactForm from "./contactForm";
 
 const Footer = () => {
   return (
     <div className="relative">
-      <div className="lg:absolute lg:bottom-[310px]  ">
+      <div className="lg:absolute lg:bottom-[310px]">
         <ContactForm />
       </div>
 
@@ -114,15 +113,11 @@ const Footer = () => {
             <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-600">
               <div className="flex items-center space-x-4 mt-4 md:mt-0">
                 {[
-                  <BiLogoFacebook />,
-                  <FaTwitter />,
-                  <FaVimeoV />,
-                  <FaInstagram />,
-                ].map((Icon, index) => (
-                  <div key={index} className="p-1 border rounded shadow">
-                    {Icon}
-                  </div>
-                ))}
+                  <BiLogoFacebook key="facebook" />,
+                  <FaTwitter key="twitter" />,
+                  <FaVimeoV key="vimeo" />,
+                  <FaInstagram key="instagram" />,
+                ]}
               </div>
               <p className="text-center md:text-left">
                 Full Copyright & Design By TeamForce – 2024
