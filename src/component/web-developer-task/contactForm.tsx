@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormspark } from "@formspark/use-formspark";
+import { toast } from "react-toastify";
+import Modal from "./modal";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
@@ -18,20 +20,39 @@ const ContactForm: React.FC = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
   const FORMSPARK_FORM_ID = "apglQWE5Q";
   const [submit] = useFormspark({ formId: FORMSPARK_FORM_ID });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    message: "",
+    isSuccess: true,
+  });
+  const closeModal = () => setIsModalOpen(false);
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       await submit(data);
-      console.log("Message sent successfully!", data);
+      setModalContent({
+        title: "Success!",
+        message: "Message sent successfully!",
+        isSuccess: true,
+      });
     } catch (error) {
-      console.error("Submission error:", error);
-      alert("Failed to send the message. Please try again.");
+      setModalContent({
+        title: "Error",
+        message: "Failed to send the message. Please try again.",
+        isSuccess: false,
+      });
+    } finally {
+      setIsModalOpen(true);
+      reset();
+      setTimeout(closeModal, 2000);
     }
   };
 
@@ -101,7 +122,14 @@ const ContactForm: React.FC = () => {
             {isSubmitting ? "Submitting..." : "Get Started Now"}
           </button>
         </div>
-      </form>
+      </form>{" "}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={modalContent.title}
+        message={modalContent.message}
+        isSuccess={modalContent.isSuccess}
+      />
     </div>
   );
 };

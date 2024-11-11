@@ -26,7 +26,7 @@ export default function PaymentSolutions() {
           </p>
           <div className="relative h-32 md:h-48">
             <Image
-              src="/placeholder.svg"
+              src="/asset/editedimg.png"
               alt="Payment terminal with QR code"
               fill
               className="object-contain"
@@ -43,7 +43,7 @@ export default function PaymentSolutions() {
           </p>
           <div className="relative h-32 md:h-48">
             <Image
-              src="/placeholder.svg"
+              src="/asset/send.png"
               alt="Email and SMS icons"
               fill
               className="object-contain"
@@ -69,7 +69,7 @@ export default function PaymentSolutions() {
           </div>
           <div className="relative h-48 md:h-64">
             <Image
-              src="/placeholder.svg"
+              src="/asset/edimg.png"
               alt="Mobile phone showing invoice and product interface"
               fill
               className="object-contain"

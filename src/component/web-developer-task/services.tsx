@@ -34,32 +34,31 @@ const Services = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        <div className="relative">
-          <div className="absolute inset-0 bg-sky-100 rounded-3xl rotate-[-10deg]"></div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-sky-100 rounded-3xl rotate-[-10deg]  transition-transform duration-300 group-hover:rotate-0"></div>
           <div className="relative info p-6 rounded-3xl border-0 flex flex-col gap-32">
             <PiGlobeSimpleDuotone size={30} />
             <h3 className="text-xl font-semibold mb-2">Online</h3>
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 bg-[#b1f143] rounded-3xl rotate-[-10deg]"></div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-[#b1f143] rounded-3xl rotate-[-10deg]  transition-transform duration-300 group-hover:rotate-0"></div>
           <div className="relative info p-6 rounded-3xl border-0 flex flex-col gap-32">
             <HiBuildingOffice2 size={30} />
             <h3 className="text-xl font-semibold mb-2">Bank Transfers</h3>
           </div>
         </div>
-
-        <div className="relative">
-          <div className="absolute inset-0 bg-pink-100 rounded-3xl rotate-[-10deg]"></div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-pink-100 rounded-3xl rotate-[-10deg] transition-transform duration-300 group-hover:rotate-0"></div>
           <div className="relative info p-6 rounded-3xl border-0 flex flex-col gap-32">
             <BiSolidKeyboard size={30} />
             <h3 className="text-xl font-semibold mb-2">Keyed</h3>
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 bg-purple-100 rounded-3xl rotate-[-10deg]"></div>
+        <div className="relative group">
+          <div className="absolute inset-0 bg-purple-100 rounded-3xl rotate-[-10deg]  transition-transform duration-300 group-hover:rotate-0"></div>
           <div className="relative info p-6 rounded-3xl border-0 flex flex-col gap-32">
             <BsIncognito size={30} />
             <h3 className="text-xl font-semibold mb-2">In-Person</h3>

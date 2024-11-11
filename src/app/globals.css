@@ -148,14 +148,34 @@ background-color: #ffffff;
 }
 
 
+/* Base styles for testimonial cards */
 .testimonial-card {
   opacity: 0;
-  transform: translateX(50px); /* Cards start from off-screen */
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Animate opacity and translation */
+  transform: translateX(100%);
+  animation: slideIn 1s forwards;
 }
 
-/* Slide-in animation that happens once the animationStarted is true */
-.testimonial-card.slide-in {
-  opacity: 1;
-  transform: translateX(0); /* Move cards to their final position */
+/* The animation for sliding in */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Adjust the timing for each card */
+.testimonial-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.testimonial-card:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.testimonial-card:nth-child(3) {
+  animation-delay: 3s;
 }
