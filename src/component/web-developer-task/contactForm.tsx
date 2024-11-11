@@ -4,7 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormspark } from "@formspark/use-formspark";
-import { toast } from "react-toastify";
+
 import Modal from "./modal";
 
 const schema = z.object({
@@ -43,7 +43,7 @@ const ContactForm: React.FC = () => {
         message: "Message sent successfully!",
         isSuccess: true,
       });
-    } catch (error) {
+    } catch {
       setModalContent({
         title: "Error",
         message: "Failed to send the message. Please try again.",

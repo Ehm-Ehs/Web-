@@ -137,10 +137,9 @@ background-color: #ffffff;
   transform-origin: center center;
 }
 
-/* Styling for connecting lines */
 .line {
   position: absolute;
-  height: 2px;
+  height: 1px;
   background-color: #4a90e2;
   top: 50%;
   left: 50%;
@@ -148,14 +147,12 @@ background-color: #ffffff;
 }
 
 
-/* Base styles for testimonial cards */
 .testimonial-card {
   opacity: 0;
   transform: translateX(100%);
   animation: slideIn 1s forwards;
 }
 
-/* The animation for sliding in */
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -167,7 +164,6 @@ background-color: #ffffff;
   }
 }
 
-/* Adjust the timing for each card */
 .testimonial-card:nth-child(1) {
   animation-delay: 0s;
 }

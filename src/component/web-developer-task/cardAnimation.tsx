@@ -37,18 +37,16 @@ function CardAnimation() {
   const [animationStarted, setAnimationStarted] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Trigger animation when the section comes into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Start the animation after 1 second
           setTimeout(() => {
             setAnimationStarted(true);
-          }, 1000); // 1 second delay
+          }, 1000);
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is in view
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) {
